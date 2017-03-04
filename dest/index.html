@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0">
+    <meta charset="utf-8">
+    <title>get stared from github</title>
+    <link href="https://styleguide.brainly.com/76.1.1/style-guide.css" rel="stylesheet"/>
+    <link href="/css/getstarred.min.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="sg-layout">
+
+    <div class="sg-header sg-header--fixed">
+      <div class="sg-header__container">
+
+      </div>
+    </div>
+
+    <div class="sg-layout__container">
+      <div class="sg-layout__content" >
+
+        <div class="sg-actions-list">
+          <div class="sg-actions-list__hole">
+            <h2 class="sg-header-primary sg-header-primary--xsmall">Selected users:</h2>
+          </div>
+          <div class="sg-actions-list__hole">
+            <button class="sg-button-secondary sg-button-secondary--alt" data-get-starred-btn>Get matched</button>
+          </div>
+          <div class="sg-actions-list__hole">
+            <button class="sg-button-secondary sg-button-secondary--dark-inverse" data-clear>Clear data</button>
+          </div>
+        </div>
+        <div class="sg-horizontal-separator sg-horizontal-separator--spaced"></div>
+        <div data-results-placeholder></div>
+        <h3 class="sg-header-primary sg-header-primary--xsmall">Matched repo names:</h3>
+        <div class="sg-horizontal-separator sg-horizontal-separator--spaced"></div>
+        <div data-results-matched-placeholder></div>
+      </div>
+      <div class="sg-layout__aside-content">
+        <div class="sg-layout__box" data-form>
+          <form action="" onsubmit="return false;" data-get-users>
+            <div class="docs-block__contrast-box docs-block__contrast-box--full-width">
+                <div class="sg-actions-list">
+                  <div class="sg-actions-list__hole">
+                    Users
+                  </div>
+                  <div class="sg-actions-list__hole">
+                    <span data-add-user class="sg-button-primary sg-button-primary--dark-inverse sg-button-secondary--small">
+                      Add user
+                    </span>
+                  </div>
+                </div>
+              </div>
+            <div class="sg-horizontal-separator sg-horizontal-separator--spaced"></div>
+            <div data-users-fields>
+              <input type="text" data-user-input class="sg-input sg-input--spaced-bottom sg-input--full-width" required placeholder="user login">
+              <input type="text" data-user-input class="sg-input sg-input--spaced-bottom sg-input--full-width" required placeholder="#user login">
+            </div>
+            <button class="sg-button-primary sg-button-primary--full-width">Get users</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/getstarred.min.js"></script>
+  <script src="https://styleguide.brainly.com/images/icons-5459066133.js"></script>
+  </body>
+</html>
