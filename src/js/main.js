@@ -4,7 +4,6 @@
   const form = document.querySelector('[data-get-users]');
   let matchBtn = document.querySelector('[data-get-starred-btn]');
   const gitHubUsersAPI = 'https://api.github.com/users/';
-  const token = 'a897325b3659e0ccd9c0f45f6bad14752f45bc5b';
   let savedUsers = JSON.parse(localStorage.getItem('usersCollection')) || [];
   let usersURls = [];
   let usersCollection = [];
