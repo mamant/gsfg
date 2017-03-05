@@ -87,6 +87,17 @@
     document.querySelector('[data-users-fields]').appendChild(newUserField);
   }
 
+  function showLoading() {
+    var loadingEl = document.createElement('div');
+    let loadingElContent = `<div class="sg-getting-users">Getting users ..</div>`;
+
+    loadingEl.innerHTML = loadingElContent;
+    document.querySelector('[data-form]').appendChild(loadingEl);
+  }
+  function stopLoading() {
+    document.querySelector('.sg-getting-users').remove();
+  }
+
   function status(response) {
     if (response.status >= 200 && response.status < 300) {
       return Promise.resolve(response)
@@ -101,6 +112,7 @@
 
   function getStarred(el) {
     clearData();
+    showLoading();
     let starred = new Promise((resolve, reject) => {
       let usersList = el.currentTarget.querySelectorAll('[data-user-input]')
         usersList.forEach(function(item, i) {
@@ -123,6 +135,7 @@
                     newUser.starredRepositories = data;
                     newUser.save();
                     newUser.print();
+                    stopLoading();
                   }
                 );
             });
