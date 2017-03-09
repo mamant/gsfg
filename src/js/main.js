@@ -7,6 +7,7 @@
   let savedUsers = JSON.parse(localStorage.getItem('usersCollection')) || [];
   let usersURls = [];
   let usersCollection = [];
+
   form.addEventListener("submit", getStarred.bind(this));
   matchBtn.addEventListener('click', getStarredFromUsers);
   document.querySelector('[data-add-user]').addEventListener('click', addUserToList);
@@ -44,7 +45,7 @@
               <span class="sg-link sg-link--gray sg-link--emphasised">${this.name}</span>
             </div>
             <div class="sg-media__content">
-              <span>${this.name} has ${this.starredRepositories.length} sterred repos</span>
+              <span>${this.name} has ${this.starredRepositories.length} starred repos</span>
             </div>
           </div>
         </div>
@@ -94,6 +95,7 @@
     loadingEl.innerHTML = loadingElContent;
     document.querySelector('[data-form]').appendChild(loadingEl);
   }
+
   function stopLoading() {
     document.querySelector('.sg-getting-users').remove();
   }
@@ -164,22 +166,21 @@
 
     if (matched.length > 0) {
       matched.forEach( repo => {
-      var repoElement = document.createElement('div');
-      let repoElementContent = `
-        <div class="sg-media sg-media--focused">
-          <div class="sg-media__wrapper">
-            <div class="sg-media__content">
-              <span class="sg-link sg-link--gray sg-link--emphasised">${repo}</span>
+        var repoElement = document.createElement('div');
+        let repoElementContent = `
+          <div class="sg-media sg-media--focused">
+            <div class="sg-media__wrapper">
+              <div class="sg-media__content">
+                <span class="sg-link sg-link--gray sg-link--emphasised">${repo}</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="sg-horizontal-separator sg-horizontal-separator--short-spaced"></div>`;
-        repoElement.innerHTML = repoElementContent;
-        document.querySelector('[data-results-matched-placeholder]').appendChild(repoElement);
+          <div class="sg-horizontal-separator sg-horizontal-separator--short-spaced"></div>`;
+          repoElement.innerHTML = repoElementContent;
+          document.querySelector('[data-results-matched-placeholder]').appendChild(repoElement);
       });
     } else {
       document.querySelector('[data-results-matched-placeholder]').innerHTML = '<div class="sg-box">No matched repos</div>';
     }
   }
-
 })();
